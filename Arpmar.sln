@@ -1,0 +1,53 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2020
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArpmarCore", "ArpmarCore\ArpmarCore.csproj", "{CE8F8729-DB14-455C-8466-10CEDAFC5ECF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArpmarTests", "ArpmarTests\ArpmarTests.csproj", "{DE29B31D-4672-408A-B65A-B3D1BDF80868}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArpmarService", "ArpmarService\ArpmarService.csproj", "{6CC38020-592A-4E63-8183-85A215CBABE1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CE8F8729-DB14-455C-8466-10CEDAFC5ECF} = {CE8F8729-DB14-455C-8466-10CEDAFC5ECF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArpmarApp", "ArpmarApp\ArpmarApp.csproj", "{B243B566-A3D7-4347-9026-A8F753A1C08B}"
+	ProjectSection(ProjectDependencies) = postProject
+		{CE8F8729-DB14-455C-8466-10CEDAFC5ECF} = {CE8F8729-DB14-455C-8466-10CEDAFC5ECF}
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "ArpmarInstaller", "ArpmarInstaller\ArpmarInstaller.vdproj", "{A0728193-5EA4-4F53-AFC3-D3A124B30A47}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CE8F8729-DB14-455C-8466-10CEDAFC5ECF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CE8F8729-DB14-455C-8466-10CEDAFC5ECF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CE8F8729-DB14-455C-8466-10CEDAFC5ECF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CE8F8729-DB14-455C-8466-10CEDAFC5ECF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE29B31D-4672-408A-B65A-B3D1BDF80868}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE29B31D-4672-408A-B65A-B3D1BDF80868}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE29B31D-4672-408A-B65A-B3D1BDF80868}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE29B31D-4672-408A-B65A-B3D1BDF80868}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6CC38020-592A-4E63-8183-85A215CBABE1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6CC38020-592A-4E63-8183-85A215CBABE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6CC38020-592A-4E63-8183-85A215CBABE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6CC38020-592A-4E63-8183-85A215CBABE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B243B566-A3D7-4347-9026-A8F753A1C08B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B243B566-A3D7-4347-9026-A8F753A1C08B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B243B566-A3D7-4347-9026-A8F753A1C08B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B243B566-A3D7-4347-9026-A8F753A1C08B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0728193-5EA4-4F53-AFC3-D3A124B30A47}.Debug|Any CPU.ActiveCfg = Debug
+		{A0728193-5EA4-4F53-AFC3-D3A124B30A47}.Release|Any CPU.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E7A5FD02-0AAE-493B-981A-71CFBF7C74D0}
+	EndGlobalSection
+EndGlobal
