@@ -4,9 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ArpmarApp"
+        xmlns:tabsView="clr-namespace:ArpmarApp.Views" 
+        xmlns:views="clr-namespace:ArpmarApp.Views"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="arpMAR" Height="640" Width="860" Background="{StaticResource BlueBackground}">
     <Grid>
-        
+        <TabControl Margin="1,5,1,1">
+            <TabItem Width="250" Height="30" Header="ARP Management">
+                <views:ArpManagementView />
+            </TabItem>
+            <TabItem Width="250" Header="Service Management">
+                <views:ServiceManagementView />
+            </TabItem>
+        </TabControl>
     </Grid>
 </Window>

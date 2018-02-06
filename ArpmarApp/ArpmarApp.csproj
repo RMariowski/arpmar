@@ -36,6 +36,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.ServiceProcess" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -54,6 +55,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="EntryWindow.xaml.cs">
+      <DependentUpon>EntryWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\TableEntry.cs" />
+    <Compile Include="Views\ArpManagementView.xaml.cs">
+      <DependentUpon>ArpManagementView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ServiceManagementView.xaml.cs">
+      <DependentUpon>ServiceManagementView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="EntryWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -66,6 +81,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\ArpManagementView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ServiceManagementView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -93,5 +116,12 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ArpmarCore\ArpmarCore.csproj">
+      <Project>{ce8f8729-db14-455c-8466-10cedafc5ecf}</Project>
+      <Name>ArpmarCore</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

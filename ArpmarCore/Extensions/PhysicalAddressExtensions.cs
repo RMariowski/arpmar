@@ -15,7 +15,7 @@ namespace ArpmarCore.Extensions
                 builder.Append(rawString.Substring(i, 2));
 
                 if (i + 2 < rawString.Length)
-                    builder.Append('-');
+                    builder.Append(separator);
             }
 
             return builder.ToString();

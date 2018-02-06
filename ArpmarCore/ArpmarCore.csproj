@@ -42,9 +42,11 @@
   <ItemGroup>
     <Compile Include="Domain\Arp.cs" />
     <Compile Include="Domain\ArpEntry.cs" />
+    <Compile Include="Domain\ArpEntryDiff.cs" />
+    <Compile Include="Domain\ArpEntryDiffState.cs" />
     <Compile Include="Domain\ArpEntryType.cs" />
     <Compile Include="Domain\ArpTable.cs" />
-    <Compile Include="Domain\IArp.cs" />
+    <Compile Include="Domain\Service.cs" />
     <Compile Include="Extensions\PhysicalAddressExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

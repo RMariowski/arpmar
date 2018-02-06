@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
+using System.Text;
 
 namespace ArpmarCore.Domain
 {
@@ -8,6 +8,8 @@ namespace ArpmarCore.Domain
     {
         private readonly List<ArpEntry> _entries = new List<ArpEntry>();
         private static readonly object Lock = new object();
+
+        public string Interface { get; }
 
         public ArpEntry this[int index]
         {
@@ -18,7 +20,7 @@ namespace ArpmarCore.Domain
             }
         }
 
-        public IReadOnlyList<ArpEntry> Entries
+        public IEnumerable<ArpEntry> Entries
         {
             get
             {
@@ -27,28 +29,14 @@ namespace ArpmarCore.Domain
             }
         }
 
+        public ArpTable(string @interface)
+            => Interface = @interface;
+
+
         public void AddEntry(ArpEntry arpEntry)
         {
             lock (Lock)
                 _entries.Add(arpEntry);
-        }
-
-        public ArpEntry GetEntryByIp(string ip)
-        {
-            lock (Lock)
-                return _entries.FirstOrDefault(x => x.IpAddress.ToString() == ip);
-        }
-
-        public ArpEntry[] GetEntriesByMac(string mac)
-        {
-            lock (Lock)
-                return _entries.Where(x => x.MacAddress.ToString() == mac).ToArray();
-        }
-
-        public ArpEntry[] GetEntriesByType(ArpEntryType arpEntryType)
-        {
-            lock (Lock)
-                return _entries.Where(x => x.Type == arpEntryType).ToArray();
         }
 
         public IEnumerator<ArpEntry> GetEnumerator()
@@ -62,5 +50,16 @@ namespace ArpmarCore.Domain
 
         IEnumerator IEnumerable.GetEnumerator()
             => GetEnumerator();
+
+        public override string ToString()
+        {
+            var builder = new StringBuilder();
+
+            builder.Append($"Interface: {Interface}\n");
+            foreach (var entry in Entries)
+                builder.Append($"{entry}\n");
+
+            return builder.ToString();
+        }
     }
 }

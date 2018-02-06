@@ -5,12 +5,14 @@ namespace ArpmarCore.Domain
 {
     public class ArpEntry
     {
+        public string Interface { get; }
         public IPAddress IpAddress { get; }
         public PhysicalAddress MacAddress { get; }
         public ArpEntryType Type { get; }
 
-        public ArpEntry(IPAddress ip, PhysicalAddress mac, ArpEntryType type)
+        public ArpEntry(string @interface, IPAddress ip, PhysicalAddress mac, ArpEntryType type)
         {
+            Interface = @interface;
             IpAddress = ip;
             MacAddress = mac;
             Type = type;
@@ -26,7 +28,8 @@ namespace ArpmarCore.Domain
 
         public bool Equals(ArpEntry other)
         {
-            return IpAddress.Equals(other.IpAddress) && 
+            return Interface == other.Interface &&
+                   IpAddress.Equals(other.IpAddress) &&
                    MacAddress.Equals(other.MacAddress) &&
                    Type == other.Type;
         }
@@ -35,11 +38,15 @@ namespace ArpmarCore.Domain
         {
             unchecked
             {
-                int hashCode = IpAddress != null ? IpAddress.GetHashCode() : 0;
+                int hashCode = Interface != null ? Interface.GetHashCode() : 0;
+                hashCode = (hashCode * 397) ^ (IpAddress != null ? IpAddress.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (MacAddress != null ? MacAddress.GetHashCode() : 0);
                 hashCode = (hashCode * 397) ^ (int) Type;
                 return hashCode;
             }
         }
+
+        public override string ToString() 
+            => $"IP: {IpAddress} MAC: {MacAddress} Type {Type.ToString()}";
     }
 }

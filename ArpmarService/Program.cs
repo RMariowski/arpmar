@@ -1,25 +1,44 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
+using System.Collections.Specialized;
+using System.Configuration;
+using System.Net;
 using System.ServiceProcess;
-using System.Text;
-using System.Threading.Tasks;
+using ArpmarService.Services;
 
 namespace ArpmarService
 {
-    static class Program
+    internal static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
-        static void Main()
+        private static void Main()
         {
-            ServiceBase[] ServicesToRun;
-            ServicesToRun = new ServiceBase[]
+            var appSettings = ConfigurationManager.AppSettings;
+
+            using (var logService = new LogService())
             {
-                new Service1()
-            };
-            ServiceBase.Run(ServicesToRun);
+                using (var mailService = new MailService(logService))
+                {
+                    Configure(mailService, appSettings);
+
+                    var mainService = new ArpmarService(logService, mailService)
+                    {
+                        CheckForChangesInterval = Convert.ToInt32(appSettings["CheckForChangesInterval"])
+                    };
+
+                    ServiceBase.Run(mainService);
+                }
+            }
+        }
+
+        private static void Configure(MailService mailService, NameValueCollection appSettings)
+        {
+            mailService.Client.Host = appSettings["SMTP-Host"];
+            mailService.Client.Port = Convert.ToInt32(appSettings["SMTP-Port"]);
+            mailService.Client.EnableSsl = Convert.ToBoolean(appSettings["SMTP-EnableSSL"]);
+            mailService.Client.Credentials =
+                new NetworkCredential(appSettings["SMTP-Login"], appSettings["SMTP-Password"]);
+
+            mailService.From = appSettings["SMTP-From"];
+            mailService.To = appSettings["SMTP-To"];
         }
     }
 }

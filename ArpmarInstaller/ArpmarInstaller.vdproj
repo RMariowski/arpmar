@@ -27,6 +27,18 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_3C7F3061A4044F23CF68DE3C0093B96C"
+        "OwnerKey" = "8:_597EB2A294F445698C79BEF71348DA80"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_3C7F3061A4044F23CF68DE3C0093B96C"
+        "OwnerKey" = "8:_8A7F8C59C3CF447C8133DF6858E8EF56"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_597EB2A294F445698C79BEF71348DA80"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
@@ -40,7 +52,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_1941B33F0B0A1C7F468AFE53AD47293E"
+        "OwnerKey" = "8:_597EB2A294F445698C79BEF71348DA80"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -52,7 +64,13 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_597EB2A294F445698C79BEF71348DA80"
+        "OwnerKey" = "8:_1941B33F0B0A1C7F468AFE53AD47293E"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_3C7F3061A4044F23CF68DE3C0093B96C"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -73,6 +91,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6.1"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6.1"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -89,12 +123,76 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
     {
         "CustomAction"
         {
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_84825E546CDD44B8BC58FD8B9B567917"
+            {
+            "Name" = "8:Primary output from ArpmarService (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_8A7F8C59C3CF447C8133DF6858E8EF56"
+            "FileType" = "3:2"
+            "InstallAction" = "3:2"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_C70E60F8_F395_4A0E_B234_57A354CD36B2"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_C0FFAAC871CA4538A26DC30B56858A6F"
+            {
+            "Name" = "8:Primary output from ArpmarService (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_8A7F8C59C3CF447C8133DF6858E8EF56"
+            "FileType" = "3:2"
+            "InstallAction" = "3:4"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_09F16F9C_FF18_4E41_8CEC_6D787AB9700D"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_C6C311FCD0A5431CBFB566D5B4F41A42"
+            {
+            "Name" = "8:Primary output from ArpmarService (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_8A7F8C59C3CF447C8133DF6858E8EF56"
+            "FileType" = "3:2"
+            "InstallAction" = "3:3"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_CDB1A9A7_22EA_46F0_B522_04FD604A7467"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_D28AB70263724AA4899700906DD39F50"
+            {
+            "Name" = "8:Primary output from ArpmarService (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_8A7F8C59C3CF447C8133DF6858E8EF56"
+            "FileType" = "3:2"
+            "InstallAction" = "3:1"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_7A62D020_65B0_42D9_A045_E6765BD34A8F"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
         }
         "DefaultFeature"
         {
@@ -132,6 +230,37 @@
                     }
                 }
             "SourcePath" = "8:System.Net.Http.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_6DB29C3B20BB4C3CB28AF542D943F6DC"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_3C7F3061A4044F23CF68DE3C0093B96C"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:ArpmarCore, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_3C7F3061A4044F23CF68DE3C0093B96C"
+                    {
+                    "Name" = "8:ArpmarCore.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:ArpmarCore.dll"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_6DB29C3B20BB4C3CB28AF542D943F6DC"
@@ -204,9 +333,9 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:ArpmarInstaller"
+        "ProductName" = "8:arpMAR"
         "ProductCode" = "8:{6CDBF730-B958-4DED-A3E4-C9C71B803170}"
-        "PackageCode" = "8:{6684AD74-76E1-4630-A1C7-A3F54DCF9367}"
+        "PackageCode" = "8:{A93A55FA-A65E-4DFD-96E0-FD1A4F5E5F7A}"
         "UpgradeCode" = "8:{378DF08D-C85E-4D15-91BB-37DB82475591}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -214,12 +343,12 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Default Company Name"
+        "Manufacturer" = "8:Radosław Mariowski"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
-        "Title" = "8:ArpmarInstaller"
+        "Title" = "8:arpMAR Installer"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Default Company Name"
+        "ARPCONTACT" = "8:Radosław Mariowski"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
